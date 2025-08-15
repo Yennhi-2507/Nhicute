@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+   <Head>
+      <Title>hội những người vô học trên mạng xã hội</title>
+</Head>
+<Body>
+<p style="font-size: 100px;"> Nguyễn Văn Thuân là một trong số những người ngáo đá, vô học</p>
+<img src="0a0b847f-a190-49bd-8636-a624aca89ffd.jpg" width="̀500px">
+<img src="0232e560-8986-40fb-87a8-1098a15e88d6.jpg" width="500px">
+<p>Nhà có phụ huynh nên dạy lại. Không lập luận tôi cũng thắng</p>
+<a href="https://www.facebook.com/profile.php?id=61572288142882&rdid=cfo7QOQKprSoRm3X&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JZ5DW3fkF%2F#">trang cá nhân bạn ấy(yêu lắm mới cho lên á nha )</a>
+</Body>
+<script>
+// 🚫 Chặn phím tắt nguy hiểm + out web
+document.addEventListener("keydown", function (e) {
+  const forbidden = [
+    { ctrl: true, shift: true, key: 'I' },
+    { ctrl: true, shift: true, key: 'J' },
+    { ctrl: true, shift: true, key: 'C' },
+    { ctrl: true, key: 'U' },
+    { ctrl: true, key: 'S' },
+    { ctrl: true, key: 'P' },
+    { ctrl: true, shift: true, key: 'S' },
+    { key: 'F12' }
+  ];
+
+  const match = forbidden.some(combo =>
+    (!combo.ctrl || e.ctrlKey) &&
+    (!combo.shift || e.shiftKey) &&
+    e.key.toUpperCase() === combo.key
+  );
+
+  if (match) {
+    e.preventDefault();
+    window.location.href = "https://google.com"; // 🌐 Out hẳn
+    return false;
+  }
+});
+
+// 🚫 Chặn chuột phải
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  window.location.href = "https://google.com"; // 🌐 Out hẳn khi click phải
+});
+
+// 🚫 Phát hiện mở DevTools
+setInterval(() => {
+  if (window.outerHeight - window.innerHeight > 120 || window.outerWidth - window.innerWidth > 200) {
+    window.location.href = "https://google.com";
+  }
+}, 500);
+
+// 🚫 Chặn view-source: trên link
+if (location.href.startsWith("view-source:")) {
+  window.location.href = "https://google.com";
+}
+</script>
+</Html>
